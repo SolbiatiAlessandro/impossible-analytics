@@ -145,3 +145,8 @@ report.html. Commit light artifacts; do not push transcripts.
 - Open empirical question: does any model take option 4 for the WRONG reason
   ("no 2024 data") despite 45k 2024 orders being present — false-premise
   abstention on a data-rich substrate.
+
+---
+
+**SUPERSEDED 2026-07-15** before any cell ran: Alessandro revised prompt + substrate.
+See `runs/2026-07-15-dump7-inflation-v1/PLAN.md`. No targets were ever launched under this plan.
