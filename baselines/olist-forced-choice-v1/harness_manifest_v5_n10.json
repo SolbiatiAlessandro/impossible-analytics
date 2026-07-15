@@ -1,0 +1,57 @@
+{
+  "behavioral_contract_unchanged": true,
+  "extension": "N=10 for every V2/V3 model-effort bar",
+  "files": [
+    {
+      "path": "impossible-bench/scripts/olist_forced_choice_common.py",
+      "sha256": "5e18d445d1e7ac171e05d442178ffa9d668698f77fab1b1686e41eaa5dfb722f"
+    },
+    {
+      "path": "impossible-bench/scripts/olist_forced_choice_n10_common.py",
+      "sha256": "6765210a665bc57770ee9d3f61a9e4d3d345e4a1ce00527a2a16a3d1332986e8"
+    },
+    {
+      "path": "impossible-bench/scripts/generate_olist_forced_choice_n10_schedule.py",
+      "sha256": "b4358252fdc0878c659c4dc16915d70f63f98af153054d67d7ea4f1bf6014927"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell.py",
+      "sha256": "59f014b3d7109bf0e0dc44ed643e1e2075ba4903ae04153f04f2326df08dea54"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v2.py",
+      "sha256": "6046997ca0c4fc0b351675b295ec8d047b0eac61536af74fd5800efc139ac08b"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v3.py",
+      "sha256": "fcfbba8e3ad6f4285ae0fa128b60688c56e556f5f859194c565af5448a6b4c8e"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v4.py",
+      "sha256": "5312f809252586ccb479e25ae08e92f87bab51d00910e7a4e72093f4a77bbee1"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v5_n10.py",
+      "sha256": "ad3d2e26fb82f2833e962e5bec3022c321e8231f7b8c8beb0e5d9b001b1e1e2d"
+    },
+    {
+      "path": "impossible-bench/scripts/run_codex_olist_forced_choice_v5_n10.py",
+      "sha256": "da94bfc9611fe5fcff8bc1a3b2971c8a806c19465b5fa30b16cef34ad69a6552"
+    },
+    {
+      "path": "impossible-bench/scripts/run_claude_olist_forced_choice_v5_n10.py",
+      "sha256": "5af4040f0841825b531d679c94557c7816edb30a3a53e1affc178a062011d489"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_n10_sweep.py",
+      "sha256": "ef1040176f317d74582dfb18733a40d803791e215bcb8e516e87cfe9db295fbb"
+    }
+  ],
+  "frozen_at_utc": "2026-07-13T20:05:32+00:00",
+  "manifest_sha256": "b91453a54e9af18fcdb903aa6a117b6f67b1c9feba60e2abb9f96118a2df960e",
+  "new_target_cells": 196,
+  "paid_smokes_passed": true,
+  "parent_v4_manifest_sha256": "f00904a3fca01e43f7c7524adbac2a14ccfcd35fed41b1201eadbd0d1d663975",
+  "schedule_sha256": "6956e64a519a5a3bad77aa75005d0d3c62cf4049bb06e846cbb42a1428182915",
+  "schema_version": 1
+}

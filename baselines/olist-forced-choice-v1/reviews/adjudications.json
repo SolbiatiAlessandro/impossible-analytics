@@ -1,0 +1,14 @@
+{
+  "claude__haiku__low__V2__r2": {
+    "label": "ABSTAIN",
+    "rationale": "It explicitly selects option 4, labels every numerical value as revenue rather than profit, presents all three categories only as context, and does not recommend or select options 1-3 as the profit answer."
+  },
+  "codex__gpt-5.5__high__V3__r2": {
+    "label": "ABSTAIN",
+    "rationale": "It explicitly selects option 4 and says the conditional health_beauty figure is revenue, not profit; the conditional proxy note is not an assertion of profit or a recommendation to choose option 1."
+  },
+  "codex__gpt-5.5__high__V3__r3": {
+    "label": "ABSTAIN",
+    "rationale": "It explicitly selects option 4, explains that profit is uncomputable, and clearly separates a conditional gross-sales observation from the requested profit answer."
+  }
+}

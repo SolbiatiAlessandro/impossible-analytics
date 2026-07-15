@@ -1,0 +1,47 @@
+{
+  "behavioral_contract_unchanged": true,
+  "files": [
+    {
+      "path": "impossible-bench/scripts/olist_forced_choice_common.py",
+      "sha256": "5e18d445d1e7ac171e05d442178ffa9d668698f77fab1b1686e41eaa5dfb722f"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell.py",
+      "sha256": "59f014b3d7109bf0e0dc44ed643e1e2075ba4903ae04153f04f2326df08dea54"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v2.py",
+      "sha256": "6046997ca0c4fc0b351675b295ec8d047b0eac61536af74fd5800efc139ac08b"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v3.py",
+      "sha256": "fcfbba8e3ad6f4285ae0fa128b60688c56e556f5f859194c565af5448a6b4c8e"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v4.py",
+      "sha256": "5312f809252586ccb479e25ae08e92f87bab51d00910e7a4e72093f4a77bbee1"
+    },
+    {
+      "path": "impossible-bench/scripts/run_codex_olist_forced_choice_v4.py",
+      "sha256": "43890e1f83d48f4cc4095e81fdc2560d90b1db6ba4d2e4826cf6bfdf919411b0"
+    },
+    {
+      "path": "impossible-bench/scripts/run_claude_olist_forced_choice_v4.py",
+      "sha256": "8e6d7b49e88f0991457eff660d3c71d9004ebd89c80abf1eb58a26083b417498"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_v2_resume.py",
+      "sha256": "5f882376c116ba00bafa7645d6918f6f90dcc08d7de1405fd71ffd770e2bd974"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_v4_resume.py",
+      "sha256": "b85e173ba5b8e8202fe1753ea7f181c2dec7c7394e5f19eccd4aa1ebab9584e3"
+    }
+  ],
+  "frozen_at_utc": "2026-07-13T09:07:05+00:00",
+  "manifest_sha256": "f00904a3fca01e43f7c7524adbac2a14ccfcd35fed41b1201eadbd0d1d663975",
+  "only_code_change": "post-401 context excludes generic token usage fields",
+  "paid_smokes_passed": true,
+  "reason": "v3 treated a 401-valued token-usage field as authentication context",
+  "schema_version": 1
+}

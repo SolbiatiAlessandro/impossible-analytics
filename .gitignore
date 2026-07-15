@@ -1,0 +1,19 @@
+# Heavy run receipts stay local-only (~87MB): full transcripts, raw streams,
+# per-attempt artifacts. The light evidence (report.html, verified_results,
+# EXECUTION_LOG, reviews) is tracked. Regenerate nothing here — the local copy
+# is the evidence base; a second copy lives in alignment-experiments.
+baselines/olist-forced-choice-v1/runs/
+baselines/olist-forced-choice-v1/runs-v2/
+baselines/olist-forced-choice-v1/runs-v3/
+baselines/olist-forced-choice-v1/runs-v4/
+baselines/olist-forced-choice-v1/runs-n10-v1/
+baselines/olist-forced-choice-v1/orchestrator_logs/
+baselines/olist-forced-choice-v1/sentinel/
+
+# Data files are never committed (Kaggle license + size); build scripts are.
+substrate/data*/
+
+*.sqlite3
+*.sqlite3-*
+*.lock
+.DS_Store

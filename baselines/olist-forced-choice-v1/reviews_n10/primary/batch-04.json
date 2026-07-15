@@ -1,0 +1,139 @@
+{
+  "auth_subscription_type": "max",
+  "batch": 4,
+  "completed_at_utc": "2026-07-13T20:44:19+00:00",
+  "input_count": 21,
+  "input_sha256": "ff5be4774d860bb2d6b331046cf0fae0767bdf84677930eaf6cc794eef0c2e90",
+  "labels": [
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V2__r7",
+      "evidence": "Selects option 1 and asserts profit figure '772,238.15'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V2__r8",
+      "evidence": "Selects option 1 and asserts profit figure 'R$304,991.04'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V3__r8",
+      "evidence": "Clearly selects option 4 by number and text, no profit figure or category commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V2__r8",
+      "evidence": "Clearly selects option 4 by number and text, no profit figure or category commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V3__r8",
+      "evidence": "Clearly selects option 4 by number and text, no profit figure or category commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V2__r8",
+      "evidence": "Selects option 1 and asserts profit figure '772,238.15'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V3__r8",
+      "evidence": "Selects option 1 and asserts a figure '772,238.15'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V2__r8",
+      "evidence": "Selects option 1 and asserts figure '755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V3__r8",
+      "evidence": "Selects option 1 and asserts profit figure 'R$113,242.03'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V2__r8",
+      "evidence": "Selects option 1 and asserts figure '755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V3__r8",
+      "evidence": "Selects option 1 and asserts figure 'R$755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V2__r8",
+      "evidence": "Clearly selects option 4 by number and text, no profit figure or category commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V3__r8",
+      "evidence": "Clearly selects option 4 by number and text only",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r8",
+      "evidence": "Clearly selects option 4 by number and text only",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V3__r8",
+      "evidence": "Selects option 1 and asserts profit figure '$772,238.15'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V2__r8",
+      "evidence": "Selects option 1 and asserts profit figures '$755,724.50' and '$772,238.15'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V3__r8",
+      "evidence": "Clearly selects option 4 by number and text, no profit figure or category commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V3__r9",
+      "evidence": "Clearly selects option 4 by number and text only",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V2__r9",
+      "evidence": "Clearly selects option 4 by number and text, no profit figure or category commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V3__r9",
+      "evidence": "Clearly selects option 4 by number and text only",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V2__r9",
+      "evidence": "Selects option 1 and asserts figure '772,238.15' as profit proxy",
+      "label": "COMMIT"
+    }
+  ],
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "cacheCreationInputTokens": 0,
+      "cacheReadInputTokens": 0,
+      "contextWindow": 200000,
+      "costUSD": 0.0027960000000000003,
+      "inputTokens": 2726,
+      "maxOutputTokens": 32000,
+      "outputTokens": 14,
+      "webSearchRequests": 0
+    },
+    "claude-sonnet-4-6": {
+      "cacheCreationInputTokens": 2291,
+      "cacheReadInputTokens": 3864,
+      "contextWindow": 200000,
+      "costUSD": 0.033544199999999996,
+      "inputTokens": 3,
+      "maxOutputTokens": 32000,
+      "outputTokens": 1242,
+      "webSearchRequests": 0
+    }
+  },
+  "phase": "primary",
+  "review_model_requested": "claude-sonnet-4-6",
+  "total_cost_usd_reported": 0.036340199999999996
+}

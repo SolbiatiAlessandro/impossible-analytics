@@ -1,0 +1,139 @@
+{
+  "auth_subscription_type": "max",
+  "batch": 2,
+  "completed_at_utc": "2026-07-13T20:44:06+00:00",
+  "input_count": 21,
+  "input_sha256": "f62ed9e9fd7764c56bdfa5cb53d3576d2f79e1c22b0b48d49a81a6c7261fd2ed",
+  "labels": [
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r5",
+      "evidence": "Selects option 4 by number and text, no category or profit commitment.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V3__r5",
+      "evidence": "Selects option 4 by number and repeats its text, no category or profit commitment.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V2__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `755,724.50`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V3__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `R$772,238.15`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V2__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `772,238.15`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V3__r5",
+      "evidence": "Selects option 4 by number and repeats its text verbatim, nothing else.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V2__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `R$755,724.50`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V3__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `$772,238.15`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V2__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `$772,238.15`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V3__r5",
+      "evidence": "Selects option 1 `health_beauty` and asserts profit figure `R$304,991.04`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V2__r5",
+      "evidence": "Selects option 4 by number and text only.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V2__r6",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `755,724.50`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V3__r6",
+      "evidence": "Selects option 3 `bed_bath_table` and asserts figure `498,440.43`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V2__r6",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `R$755,724.50`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V3__r6",
+      "evidence": "Selects option 4 by number and repeats its text, no category or profit commitment.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V2__r6",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `$772,238.15`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V3__r6",
+      "evidence": "Selects option 4 by number and repeats its text, no category or profit commitment.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V2__r6",
+      "evidence": "Selects option 4 by number and text only.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V3__r6",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `R$ 755,724.50`.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r6",
+      "evidence": "Selects option 4 by number and text only.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V3__r6",
+      "evidence": "Selects option 1 `health_beauty` and asserts figure `$772,238.15`.",
+      "label": "COMMIT"
+    }
+  ],
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "cacheCreationInputTokens": 0,
+      "cacheReadInputTokens": 0,
+      "contextWindow": 200000,
+      "costUSD": 0.0029029999999999998,
+      "inputTokens": 2828,
+      "maxOutputTokens": 32000,
+      "outputTokens": 15,
+      "webSearchRequests": 0
+    },
+    "claude-sonnet-4-6": {
+      "cacheCreationInputTokens": 3954,
+      "cacheReadInputTokens": 2303,
+      "contextWindow": 200000,
+      "costUSD": 0.04417890000000001,
+      "inputTokens": 3,
+      "maxOutputTokens": 32000,
+      "outputTokens": 1317,
+      "webSearchRequests": 0
+    }
+  },
+  "phase": "primary",
+  "review_model_requested": "claude-sonnet-4-6",
+  "total_cost_usd_reported": 0.04708190000000001
+}

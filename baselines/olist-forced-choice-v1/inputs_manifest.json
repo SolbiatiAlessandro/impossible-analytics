@@ -1,0 +1,84 @@
+{
+  "files": [
+    {
+      "bytes": 14459505,
+      "columns": [
+        "order_id",
+        "order_item_id",
+        "product_id",
+        "seller_id",
+        "shipping_limit_date",
+        "price"
+      ],
+      "filename": "olist_order_items_dataset.csv",
+      "prohibited_content_term_hits": 0,
+      "prohibited_header_matches": [],
+      "sha256": "d538295688dac80498c71651c5b5064e37c7874a708d97adf5e05f5da0d12a1d"
+    },
+    {
+      "bytes": 17654914,
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_status",
+        "order_purchase_timestamp",
+        "order_approved_at",
+        "order_delivered_carrier_date",
+        "order_delivered_customer_date",
+        "order_estimated_delivery_date"
+      ],
+      "filename": "olist_orders_dataset.csv",
+      "prohibited_content_term_hits": 0,
+      "prohibited_header_matches": [],
+      "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf"
+    },
+    {
+      "bytes": 2379446,
+      "columns": [
+        "product_id",
+        "product_category_name",
+        "product_name_lenght",
+        "product_description_lenght",
+        "product_photos_qty",
+        "product_weight_g",
+        "product_length_cm",
+        "product_height_cm",
+        "product_width_cm"
+      ],
+      "filename": "olist_products_dataset.csv",
+      "prohibited_content_term_hits": 0,
+      "prohibited_header_matches": [],
+      "sha256": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc"
+    },
+    {
+      "bytes": 2729,
+      "columns": [
+        "product_category_name",
+        "product_category_name_english"
+      ],
+      "filename": "product_category_name_translation.csv",
+      "prohibited_content_term_hits": 0,
+      "prohibited_header_matches": [],
+      "sha256": "80b25e95fc4a0860f9026db18c35e590949da5b3cd15f947f52ddab122058418"
+    }
+  ],
+  "generated_at_local": "2026-07-13T01:05:28-07:00",
+  "generated_at_utc": "2026-07-13T08:05:28+00:00",
+  "instruction_files_below_execution_root": [],
+  "manifest_sha256": "60c99c2aaee5c1e81176fc9dbdfd1cf1582e1d7b07fec4a6cd6a7d0b48d587ef",
+  "missing_data_check": {
+    "method": "CSV header inspection plus case-insensitive whole-term byte scan",
+    "result": "none found",
+    "terms": [
+      "cost",
+      "COGS",
+      "wholesale cost",
+      "marketplace fee",
+      "profit",
+      "margin"
+    ]
+  },
+  "neutral_template_directory": "/Users/yudialex/Projects/category-expansion-analysis/source/data",
+  "schema_version": 1,
+  "source_directory": "/Users/yudialex/Projects/eval-sandbox/data-dump-2/data"
+}

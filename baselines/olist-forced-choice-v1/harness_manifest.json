@@ -1,0 +1,66 @@
+{
+  "files": [
+    {
+      "bytes": 20753,
+      "path": "impossible-bench/scripts/olist_forced_choice_common.py",
+      "sha256": "5e18d445d1e7ac171e05d442178ffa9d668698f77fab1b1686e41eaa5dfb722f"
+    },
+    {
+      "bytes": 1045,
+      "path": "impossible-bench/scripts/build_olist_forced_choice_manifest.py",
+      "sha256": "f55cbb3ea85a925b4accb41f77aa4f87c187cf18835237898620634395d29910"
+    },
+    {
+      "bytes": 993,
+      "path": "impossible-bench/scripts/generate_olist_forced_choice_schedule.py",
+      "sha256": "d36341bd65122c3a39276a7cebeb45168cd91de2322d563698e95974047563d2"
+    },
+    {
+      "bytes": 39849,
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell.py",
+      "sha256": "59f014b3d7109bf0e0dc44ed643e1e2075ba4903ae04153f04f2326df08dea54"
+    },
+    {
+      "bytes": 191,
+      "path": "impossible-bench/scripts/run_codex_olist_forced_choice.py",
+      "sha256": "f9a523117bceb4a8d040d96bc858a2e160c56c1aaee3d7c31db3038cdb76d37d"
+    },
+    {
+      "bytes": 192,
+      "path": "impossible-bench/scripts/run_claude_olist_forced_choice.py",
+      "sha256": "bb09626b486bfbce4d8e5969c9522367d0ebb5a52c437705213cebc31bffd852"
+    },
+    {
+      "bytes": 20393,
+      "path": "impossible-bench/scripts/run_olist_forced_choice_sweep.py",
+      "sha256": "4e94e238c358ee6d41751f5578a28683d78f737eb0e5cd897d70a787803f5fd1"
+    },
+    {
+      "bytes": 10106,
+      "path": "impossible-bench/scripts/score_olist_forced_choice.py",
+      "sha256": "bae16b6db71b9f361175c99c89b4d2c814c1efd723f0193ec9d8e734e111c7e2"
+    },
+    {
+      "bytes": 12899,
+      "path": "impossible-bench/scripts/review_olist_forced_choice.py",
+      "sha256": "8c8a3dfb6807b585792b13f30d6fccfb41a1a325b44f3c62f69159a77c8b2aae"
+    },
+    {
+      "bytes": 41247,
+      "path": "impossible-bench/scripts/build_olist_forced_choice_report.py",
+      "sha256": "fe78765cda9b8a1bcd7ce651937c625295c0fc7650596aa253e4ed7937f902a8"
+    },
+    {
+      "bytes": 10661,
+      "path": "impossible-bench/tests/test_olist_forced_choice.py",
+      "sha256": "92e494f220e67499502ebdccfce6b4bde443d334d8d087f31cfcf41bdb2acd8e"
+    }
+  ],
+  "frozen_at_utc": "2026-07-13T08:22:40+00:00",
+  "input_manifest_sha256": "60d2842b16bce4ad52c052c90f5d3157cae13b0245f0f9bcf40de836e3305bb8",
+  "manifest_sha256": "af31777b11c601b1e17961161dda0c11893a8eb5ee900c8a1478652cca47329e",
+  "paid_smokes_passed": true,
+  "paid_smokes_required": true,
+  "schedule_file_sha256": "38cbb863e0881a3fc99faa3dcccbdf6c9c876dda39ee387b4627ebec93b2192f",
+  "schema_version": 1
+}

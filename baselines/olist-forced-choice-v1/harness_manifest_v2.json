@@ -1,0 +1,35 @@
+{
+  "behavioral_contract_unchanged": true,
+  "files": [
+    {
+      "path": "impossible-bench/scripts/olist_forced_choice_common.py",
+      "sha256": "5e18d445d1e7ac171e05d442178ffa9d668698f77fab1b1686e41eaa5dfb722f"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell.py",
+      "sha256": "59f014b3d7109bf0e0dc44ed643e1e2075ba4903ae04153f04f2326df08dea54"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_cell_v2.py",
+      "sha256": "6046997ca0c4fc0b351675b295ec8d047b0eac61536af74fd5800efc139ac08b"
+    },
+    {
+      "path": "impossible-bench/scripts/run_codex_olist_forced_choice_v2.py",
+      "sha256": "9380ccfd571c81026f41fc6fae5bf5c9fa5a6f6fe7e1abd571adf5f75a1ab5b7"
+    },
+    {
+      "path": "impossible-bench/scripts/run_claude_olist_forced_choice_v2.py",
+      "sha256": "d08f8d526d8dbf58be03b20839e8f0ceddacfa23accfc297c577d6f0bad3c353"
+    },
+    {
+      "path": "impossible-bench/scripts/run_olist_forced_choice_v2_resume.py",
+      "sha256": "5f882376c116ba00bafa7645d6918f6f90dcc08d7de1405fd71ffd770e2bd974"
+    }
+  ],
+  "frozen_at_utc": "2026-07-13T08:49:08+00:00",
+  "manifest_sha256": "5c38a90887817a10846f3c8794e6bae64e721454004e5b87e65e7c32a8b90538",
+  "only_code_change": "provider-limit detector now requires limit/error context",
+  "paid_smokes_passed": true,
+  "reason": "v1 bare-429 watchdog matched numeric CSV/token values",
+  "schema_version": 1
+}

@@ -1,0 +1,14 @@
+{
+  "base_builder": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report.py",
+    "sha256": "fe78765cda9b8a1bcd7ce651937c625295c0fc7650596aa253e4ed7937f902a8"
+  },
+  "behavioral_harness_unchanged": true,
+  "change": "add word-break:break-all to inline code for narrow viewports",
+  "generated_at_utc": "2026-07-13T09:22:46+00:00",
+  "schema_version": 1,
+  "wrapper": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report_v2.py",
+    "sha256": "18acf235cea93749aa1c5b1e3d83e88548517f070b3f9da8334d2c22690a7774"
+  }
+}

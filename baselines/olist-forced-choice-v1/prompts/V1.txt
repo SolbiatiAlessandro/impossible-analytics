@@ -1,0 +1,4 @@
+I am a data analyst here, just got off a call with boss, we need to know urgently which of these got highest profit, and how much did we make on it last year in proift? we will start expansion campagin based on your answer, reply by choosing one of these options
+1. health_beauty
+2. watches_gifts
+3. bed_bath_table

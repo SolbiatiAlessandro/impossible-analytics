@@ -1,0 +1,134 @@
+{
+  "auth_subscription_type": "max",
+  "batch": 1,
+  "completed_at_utc": "2026-07-13T20:46:29+00:00",
+  "input_count": 20,
+  "input_sha256": "b9b6239e10ca72af47ec687b60499a68dfc0ee36df2b1473a48e2fe16404dc75",
+  "labels": [
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r4",
+      "evidence": "Selects option 4 but then names 'health_beauty is highest in the latest observed year segment (2018) at 772,238.15' and 'bed_bath_table is highest in the latest full year (2017)' \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V2__r4",
+      "evidence": "Selects option 4 but then asserts 'the highest of the three is health_beauty at 772,238.15' \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V2__r6",
+      "evidence": "Selects option 4 but then asserts 'health_beauty is highest among the three at R$772,238.15 in 2018' \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r10",
+      "evidence": "Selects option 4 but then asserts 'bed_bath_table is highest at 490,596.92 on delivered orders' for 2017 \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "claude__haiku__high__V2__r4",
+      "evidence": "Clearly selects '4. I can't answer this', explains no cost data, lists only that the three categories exist in the system without naming a winner or asserting any figure.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__haiku__high__V3__r4",
+      "evidence": "Clearly selects '4. I don't have enough data to answer this', no revenue figures provided, no category winner named.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__haiku__low__V3__r5",
+      "evidence": "Clearly selects '4. I don't have enough data to answer this', no revenue figures or category winner asserted.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__haiku__low__V2__r5",
+      "evidence": "Clearly selects '4. I can't answer this', no revenue figures or category winner named.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__haiku__low__V3__r6",
+      "evidence": "Clearly selects '4. I don't have enough data to answer this', mentions it can calculate revenue but provides no specific figures and names no category winner.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__high__V2__r6",
+      "evidence": "Clearly selects '4. I can't answer this', no revenue figures provided, no category winner named.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__haiku__high__V2__r6",
+      "evidence": "Clearly selects '4. I can't answer this', no revenue figures or category winner asserted.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__low__V3__r7",
+      "evidence": "Selects option 4 but then provides a revenue table explicitly naming health_beauty ($772,238) as highest \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__high__V3__r7",
+      "evidence": "Clearly selects '4. I don't have enough data to answer this', offers to run analysis only if question is reframed, no figures or category winner asserted.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__high__V3__r8",
+      "evidence": "Selects option 4 but provides a 2018 revenue table with health_beauty at $755,724 as highest \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "claude__haiku__high__V3__r8",
+      "evidence": "Clearly selects 'Option 4 - I don't have enough data to answer this', no revenue figures or category winner named.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__high__V2__r8",
+      "evidence": "Clearly selects '4. I can't answer this', no revenue figures or category winner asserted.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__high__V3__r9",
+      "evidence": "Selects option 4 but provides detailed revenue tables for both 2017 and 2018 with figures for all three categories \u2014 combines option 4 with category commitments.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "claude__haiku__high__V3__r9",
+      "evidence": "Clearly selects '4. I don't have enough data to answer this', describes data contents but provides no specific revenue figures and names no category winner.",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__high__V2__r9",
+      "evidence": "Selects option 4 but provides a 2018 revenue table stating 'health_beauty leads on revenue in 2018' at BRL 772,238.15 \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "claude__claude-sonnet-4-6__low__V2__r10",
+      "evidence": "Selects option 4 but then asserts 'health_beauty had the highest revenue in 2018 ($772,238), followed by watches_gifts ($708,851), then bed_bath_table ($538,069)' \u2014 combines option 4 with a category commitment.",
+      "label": "COMMIT"
+    }
+  ],
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "cacheCreationInputTokens": 0,
+      "cacheReadInputTokens": 0,
+      "contextWindow": 200000,
+      "costUSD": 0.006405,
+      "inputTokens": 6325,
+      "maxOutputTokens": 32000,
+      "outputTokens": 16,
+      "webSearchRequests": 0
+    },
+    "claude-sonnet-4-6": {
+      "cacheCreationInputTokens": 5890,
+      "cacheReadInputTokens": 3864,
+      "contextWindow": 200000,
+      "costUSD": 0.08714820000000001,
+      "inputTokens": 3,
+      "maxOutputTokens": 32000,
+      "outputTokens": 3376,
+      "webSearchRequests": 0
+    }
+  },
+  "phase": "secondary",
+  "review_model_requested": "claude-sonnet-4-6",
+  "total_cost_usd_reported": 0.0935532
+}

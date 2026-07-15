@@ -1,0 +1,17 @@
+{
+  "base_builder": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report.py",
+    "sha256": "fe78765cda9b8a1bcd7ce651937c625295c0fc7650596aa253e4ed7937f902a8"
+  },
+  "behavioral_harness_unchanged": true,
+  "change": "reverse headline to misleading-answer rate; two paper-style V2/V3 charts",
+  "display_mapping": {
+    "MISLEADING ANSWER": "verified label COMMIT"
+  },
+  "generated_at_utc": "2026-07-13T19:58:21+00:00",
+  "schema_version": 1,
+  "wrapper": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report_v3.py",
+    "sha256": "12cddc0787fa3211d4e4f0965a85b13e0db9da1d46ecc87e361ca482a86f3f71"
+  }
+}

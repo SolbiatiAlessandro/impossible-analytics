@@ -1,0 +1,15 @@
+{
+  "cell_ids": [
+    "codex__gpt-5.5__high__V3__r2",
+    "codex__gpt-5.5__high__V3__r3",
+    "claude__haiku__low__V2__r1",
+    "claude__haiku__high__V2__r1",
+    "claude__claude-sonnet-4-6__high__V2__r1",
+    "claude__haiku__low__V2__r2",
+    "claude__claude-sonnet-4-6__low__V3__r2",
+    "claude__claude-sonnet-4-6__high__V2__r2",
+    "claude__claude-sonnet-4-6__high__V3__r3"
+  ],
+  "count": 9,
+  "created_at_utc": "2026-07-13T09:14:26+00:00"
+}

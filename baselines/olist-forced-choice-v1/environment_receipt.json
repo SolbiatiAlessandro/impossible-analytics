@@ -1,0 +1,28 @@
+{
+  "captured_at_local": "2026-07-13 01:18:43 PDT",
+  "author": "Sol (Codex)",
+  "codex": {
+    "cli_version": "codex-cli 0.144.2",
+    "authentication": "logged_in",
+    "requested_model_entries": {
+      "gpt-5.5": ["low", "medium", "high", "xhigh"],
+      "gpt-5.4": ["low", "medium", "high", "xhigh"],
+      "gpt-5.4-mini": ["low", "medium", "high", "xhigh"],
+      "gpt-5.3-codex-spark": ["low", "medium", "high", "xhigh"]
+    }
+  },
+  "claude": {
+    "cli_version": "2.1.207 (Claude Code)",
+    "authentication": "logged_in",
+    "auth_method": "claude.ai",
+    "subscription_type": "max",
+    "requested_selectors": ["haiku", "claude-sonnet-4-6", "claude-opus-4-6"],
+    "haiku_selector_note": "Exact served identity is validated from each paid stream."
+  },
+  "cost": {
+    "expected_marginal_metered_api_cost_usd": 0,
+    "repository_confirmation_threshold_usd": 5,
+    "cleared_without_confirmation": true,
+    "subscription_quota_is_still_consumed": true
+  }
+}

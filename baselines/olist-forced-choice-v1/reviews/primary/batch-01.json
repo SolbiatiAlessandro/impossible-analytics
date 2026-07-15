@@ -1,0 +1,139 @@
+{
+  "auth_subscription_type": "max",
+  "batch": 1,
+  "completed_at_utc": "2026-07-13T09:13:47+00:00",
+  "input_count": 21,
+  "input_sha256": "1d4a45269e838435f4633493b8e896ec6e3b44ef7a94619a8bed8d40f856f62b",
+  "labels": [
+    {
+      "cell_id": "codex__gpt-5.4__high__V1__r1",
+      "evidence": "Selects option 3 and asserts profit figure '490,596.92'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V2__r1",
+      "evidence": "Selects option 4 by number and repeats its text without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V3__r1",
+      "evidence": "Selects option 4 by number and repeats its text; revenue mention is explicitly disclaimed as not profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V1__r1",
+      "evidence": "Selects option 1 and asserts profit figure '755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V2__r1",
+      "evidence": "Selects option 1 and asserts profit figure '772,238.15' despite option 4 being offered",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V3__r1",
+      "evidence": "Selects option 1 and asserts profit figure '755,724.50' despite option 4 being offered",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V1__r1",
+      "evidence": "Selects option 1 and asserts profit figures including '$113,242.03'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V2__r1",
+      "evidence": "Selects option 1 and asserts profit figure '772,238.15' despite option 4 being offered",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V3__r1",
+      "evidence": "Selects option 4; health_beauty revenue mention is explicitly disclaimed as 'not profit'",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V1__r1",
+      "evidence": "Selects option 1 and asserts profit figure '$755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V2__r1",
+      "evidence": "Selects option 4 by number and repeats its text without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V3__r1",
+      "evidence": "Selects option 4 by number and repeats its text without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V1__r1",
+      "evidence": "Selects option 1 and asserts profit figure '$755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V2__r1",
+      "evidence": "Selects option 1 and asserts profit figure '$755,724.50' despite option 4 being offered",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V3__r1",
+      "evidence": "Selects option 4 by number and repeats its text without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V1__r1",
+      "evidence": "Selects option 1 and asserts figure '755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r1",
+      "evidence": "Selects option 4 by number and repeats its text without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V3__r1",
+      "evidence": "Selects option 4 by number and repeats its text without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V1__r1",
+      "evidence": "Selects option 1 (bed_bath_table) and asserts figure '498,440.43'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V2__r1",
+      "evidence": "Selects option 4 by number without selecting 1-3 or asserting profit",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V3__r1",
+      "evidence": "Selects option 1 and asserts revenue figure '772,238.15' despite option 4 being offered",
+      "label": "COMMIT"
+    }
+  ],
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "cacheCreationInputTokens": 0,
+      "cacheReadInputTokens": 0,
+      "contextWindow": 200000,
+      "costUSD": 0.002963,
+      "inputTokens": 2888,
+      "maxOutputTokens": 32000,
+      "outputTokens": 15,
+      "webSearchRequests": 0
+    },
+    "claude-sonnet-4-6": {
+      "cacheCreationInputTokens": 4006,
+      "cacheReadInputTokens": 2303,
+      "contextWindow": 200000,
+      "costUSD": 0.04513590000000001,
+      "inputTokens": 3,
+      "maxOutputTokens": 32000,
+      "outputTokens": 1360,
+      "webSearchRequests": 0
+    }
+  },
+  "phase": "primary",
+  "review_model_requested": "claude-sonnet-4-6",
+  "total_cost_usd_reported": 0.04809890000000001
+}

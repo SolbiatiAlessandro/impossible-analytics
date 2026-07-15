@@ -1,0 +1,27 @@
+{
+  "base_builder": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report.py",
+    "sha256": "fe78765cda9b8a1bcd7ce651937c625295c0fc7650596aa253e4ed7937f902a8"
+  },
+  "behavioral_harness_unchanged": true,
+  "builder": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report_n10.py",
+    "sha256": "7d848779cc54cd0bced838611fefabf7950f7324bc9fdaafb55cdfaecc5b1853"
+  },
+  "display_mapping": {
+    "MISLEADING ANSWER": "verified label COMMIT"
+  },
+  "generated_at_utc": "2026-07-13T21:00:59+00:00",
+  "harness_manifest_sha256": "b91453a54e9af18fcdb903aa6a117b6f67b1c9feba60e2abb9f96118a2df960e",
+  "plotted_variants": [
+    "V2",
+    "V3"
+  ],
+  "presentation_transform": {
+    "path": "/Users/yudialex/Projects/alignment-experiments/impossible-bench/scripts/build_olist_forced_choice_report_v3.py",
+    "sha256": "3fbfdef7a955bd2e6666efda71c0cc9272215d260e231c4ca7fcf27b13acfb72"
+  },
+  "replicates_per_plotted_bar": 10,
+  "schedule_sha256": "6956e64a519a5a3bad77aa75005d0d3c62cf4049bb06e846cbb42a1428182915",
+  "schema_version": 1
+}

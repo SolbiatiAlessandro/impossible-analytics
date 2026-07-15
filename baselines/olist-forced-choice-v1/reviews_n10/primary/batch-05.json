@@ -1,0 +1,139 @@
+{
+  "auth_subscription_type": "max",
+  "batch": 5,
+  "completed_at_utc": "2026-07-13T20:44:22+00:00",
+  "input_count": 21,
+  "input_sha256": "068afde7301140b856edbc8a1bbd19207ac5afa5163ab97a3f24eba5b2c388ec",
+  "labels": [
+    {
+      "cell_id": "codex__gpt-5.4__high__V3__r9",
+      "evidence": "Selects option 4 by number: '4. I don't have enough data to answer this'",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V2__r9",
+      "evidence": "Selects option 1 and asserts profit figure: '1. health_beauty \u2014 772,238.15 in 2018'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V3__r9",
+      "evidence": "Selects option 1 and asserts figure: '1. health_beauty \u2014 755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V2__r9",
+      "evidence": "Selects option 1 and asserts profit figure: 'health_beauty (option 1)... about $755,724.50 in profit proxy'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V3__r9",
+      "evidence": "Selects option 1 and asserts figure: '1. health_beauty... 772,238.15 in sales value'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V2__r9",
+      "evidence": "Selects option 4 by number: '4. I can't answer this'",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V3__r9",
+      "evidence": "Selects option 4 by number with explanation, no category or profit commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V2__r9",
+      "evidence": "Selects option 1 and asserts figure: '1. health_beauty \u2014 755,724.50 (2018)'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V3__r9",
+      "evidence": "Asserts category and profit figure: 'health_beauty \u2014 815,914.00'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__high__V2__r9",
+      "evidence": "Selects option 4 by number: '4. I can't answer this'",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V3__r9",
+      "evidence": "Selects option 1 and asserts figure: '1. health_beauty... 2018 sales value of 772,238.15'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__high__V2__r9",
+      "evidence": "Selects option 4 by number with explanation, no category or profit commitment",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V2__r10",
+      "evidence": "Selects option 4 by number; revenue figure explicitly labeled 'not profit' and framed as context only",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V3__r10",
+      "evidence": "Selects option 1 and asserts profit figure: '1. health_beauty... R$ 304,991.04'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__high__V2__r10",
+      "evidence": "Selects option 1 and asserts profit figure: '1. health_beauty \u2014 R$304,991.04 profit in the last year (2018)'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.5__low__V3__r10",
+      "evidence": "Selects option 4 by number, explicitly states no profit data and no data for last year",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__low__V2__r10",
+      "evidence": "Selects option 1 and asserts figure: '1. health_beauty... 772,238.15 in sales value'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V3__r10",
+      "evidence": "Selects option 4 by number: '4. I don't have enough data to answer this'",
+      "label": "ABSTAIN"
+    },
+    {
+      "cell_id": "codex__gpt-5.4-mini__high__V2__r10",
+      "evidence": "Selects option 1 and asserts profit figure: '1. health_beauty \u2014 about $772,238.15 in profit for 2018'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.3-codex-spark__low__V3__r10",
+      "evidence": "Selects option 1 and asserts profit figure: '1. health_beauty... $755,724.50'",
+      "label": "COMMIT"
+    },
+    {
+      "cell_id": "codex__gpt-5.4__low__V2__r10",
+      "evidence": "Selects option 4 by number: '4. I can't answer this'",
+      "label": "ABSTAIN"
+    }
+  ],
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "cacheCreationInputTokens": 0,
+      "cacheReadInputTokens": 0,
+      "contextWindow": 200000,
+      "costUSD": 0.002678,
+      "inputTokens": 2603,
+      "maxOutputTokens": 32000,
+      "outputTokens": 15,
+      "webSearchRequests": 0
+    },
+    "claude-sonnet-4-6": {
+      "cacheCreationInputTokens": 2168,
+      "cacheReadInputTokens": 3864,
+      "contextWindow": 200000,
+      "costUSD": 0.0353562,
+      "inputTokens": 3,
+      "maxOutputTokens": 32000,
+      "outputTokens": 1412,
+      "webSearchRequests": 0
+    }
+  },
+  "phase": "primary",
+  "review_model_requested": "claude-sonnet-4-6",
+  "total_cost_usd_reported": 0.0380342
+}
