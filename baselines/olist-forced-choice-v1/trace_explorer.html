@@ -3,273 +3,157 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Olist forced-choice — trace explorer</title>
+<title>Olist forced-choice — interactive trace explorer</title>
 <style>
-  :root {
-    --ground: #f7f5f0;
-    --card: #ffffff;
-    --ink: #23211c;
-    --muted: #6f695d;
-    --line: #e3ded4;
-    --accent: #9a6d1b;
-    --accent-soft: #f5ecd7;
-    --commit: #a63c31;
-    --commit-soft: #f9e5e2;
-    --abstain: #256b45;
-    --abstain-soft: #e3efe6;
-    --code-bg: #f0ede6;
-    --overlay: rgba(35, 33, 28, 0.55);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ground: #161511;
-      --card: #201e19;
-      --ink: #e9e4d8;
-      --muted: #a29a89;
-      --line: #37332b;
-      --accent: #d4a63f;
-      --accent-soft: #322a18;
-      --commit: #e0766a;
-      --commit-soft: #3a221f;
-      --abstain: #6dbb92;
-      --abstain-soft: #1d2f26;
-      --code-bg: #1a1915;
-      --overlay: rgba(0, 0, 0, 0.65);
-    }
-  }
-  :root[data-theme="light"] {
-    --ground: #f7f5f0; --card: #ffffff; --ink: #23211c; --muted: #6f695d;
-    --line: #e3ded4; --accent: #9a6d1b; --accent-soft: #f5ecd7;
-    --commit: #a63c31; --commit-soft: #f9e5e2; --abstain: #256b45; --abstain-soft: #e3efe6;
-    --code-bg: #f0ede6; --overlay: rgba(35,33,28,0.55);
-  }
-  :root[data-theme="dark"] {
-    --ground: #161511; --card: #201e19; --ink: #e9e4d8; --muted: #a29a89;
-    --line: #37332b; --accent: #d4a63f; --accent-soft: #322a18;
-    --commit: #e0766a; --commit-soft: #3a221f; --abstain: #6dbb92; --abstain-soft: #1d2f26;
-    --code-bg: #1a1915; --overlay: rgba(0,0,0,0.65);
-  }
+  :root{--ink:#17212b;--muted:#596572;--paper:#fff;--panel:#f6f8f9;--line:#d8dde2;--accent:#176c4c}
+  *{box-sizing:border-box}
+  body{margin:0;background:#edf0f2;color:var(--ink);font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+  main{max-width:1500px;margin:0 auto;background:var(--paper);padding:28px 38px 70px;box-shadow:0 0 30px #0001}
+  header{border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:20px}
+  h1{font-size:34px;line-height:1.15;margin:0 0 8px}
+  h2{font-size:26px;margin:36px 0 12px}
+  .provenance{color:var(--muted)}
+  .provenance code{font-size:13px}
+  .status{display:inline-block;padding:3px 9px;border-radius:999px;background:#e5f3ec;color:#14583f;font-weight:700;text-transform:uppercase;font-size:12px}
+  code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:12px;overflow-wrap:anywhere}
+  .num{font-variant-numeric:tabular-nums}
 
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
-    background: var(--ground);
-    color: var(--ink);
-    font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-  code, pre, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
-  .num { font-variant-numeric: tabular-nums; }
+  .stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:10px 16px;min-width:150px}
+  .stat .k{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+  .stat .v{font-size:22px;font-weight:750}
+  .stat .v small{font-size:13px;font-weight:400;color:var(--muted)}
 
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 28px 20px 80px; }
+  .note{color:var(--muted);font-size:14px;margin:4px 0 14px}
+  .figure{border:1px solid var(--line);background:#fff;border-radius:10px;padding:18px 16px 12px;overflow-x:auto}
 
-  header.page h1 { font-size: 22px; margin: 0 0 4px; letter-spacing: -0.01em; text-wrap: balance; }
-  header.page .sub { color: var(--muted); font-size: 13.5px; max-width: 72ch; }
-  .statline { display: flex; gap: 10px; flex-wrap: wrap; margin: 18px 0 6px; }
-  .stat {
-    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
-    padding: 10px 14px; min-width: 128px;
-  }
-  .stat .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); }
-  .stat .v { font-size: 20px; font-weight: 650; }
-  .stat .v small { font-size: 12px; font-weight: 400; color: var(--muted); }
+  .chart{display:flex;align-items:flex-end;gap:22px;padding:4px 6px 2px;min-width:900px}
+  .mgroup{display:flex;flex-direction:column;align-items:center;gap:7px;flex:0 0 auto}
+  .barpair{display:flex;align-items:flex-end;gap:6px;height:180px}
+  .barcol{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
+  .barcol .count{font-size:13px;font-weight:700;color:var(--ink)}
+  .bar{width:40px;border-radius:3px 3px 0 0;cursor:pointer;border:1px solid #6e2d28;padding:0;background:#8e3b34;min-height:3px;position:relative}
+  .bar.low{background:#d8a39d;border-color:#b5837d}
+  .bar.zero{background:#247a52;border-color:#1d6242;height:4px !important;border-top:16px solid transparent;background-clip:padding-box;box-sizing:content-box}
+  .bar:hover,.bar:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .barcol .eff{font-size:13px;color:var(--muted)}
+  .mgroup .mname{font-size:13px;font-weight:650;text-align:center;max-width:100px;line-height:1.25}
+  .legend{display:flex;gap:18px;margin-top:12px;font-size:13px;color:var(--muted);align-items:center}
+  .sw{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 
-  section.panel {
-    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
-    padding: 20px 22px 14px; margin-top: 22px;
-  }
-  section.panel h2 { font-size: 15px; margin: 0 0 2px; }
-  section.panel .desc { color: var(--muted); font-size: 12.5px; margin: 0 0 16px; }
-  section.panel .desc code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; font-size: 11.5px; }
+  .v1strip{display:flex;gap:10px;flex-wrap:wrap}
+  .v1cell{border:1px solid var(--line);border-left:5px solid #c84c4c;background:#fff;border-radius:8px;padding:8px 12px;font-size:14px;cursor:pointer;text-align:left}
+  .v1cell:hover,.v1cell:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .v1cell b{display:block}
+  .v1cell small{color:var(--muted)}
 
-  .chart { display: flex; align-items: flex-end; gap: 18px; overflow-x: auto; padding: 6px 2px 2px; }
-  .mgroup { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 0 0 auto; }
-  .barpair { display: flex; align-items: flex-end; gap: 5px; height: 170px; }
-  .barcol { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; gap: 4px; }
-  .barcol .count { font-size: 10.5px; color: var(--muted); }
-  .bar {
-    width: 34px; border-radius: 4px 4px 0 0; cursor: pointer; border: none; padding: 0;
-    background: var(--commit); opacity: 0.92; position: relative;
-    transition: opacity 0.12s ease, outline-color 0.12s ease;
-    min-height: 3px;
-  }
-  .bar.zero {
-    background: var(--abstain); height: 4px !important;
-    border-top: 16px solid transparent; background-clip: padding-box; box-sizing: content-box;
-  }
-  .bar:hover, .bar:focus-visible { opacity: 1; outline: 2px solid var(--accent); outline-offset: 2px; }
-  .barcol .eff { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); }
-  .mgroup .mname { font-size: 11.5px; text-align: center; max-width: 92px; line-height: 1.25; color: var(--ink); }
-
-  .v1strip { display: flex; gap: 8px; flex-wrap: wrap; }
-  .v1cell {
-    border: 1px solid var(--line); background: var(--commit-soft); color: var(--commit);
-    border-radius: 6px; padding: 6px 10px; font-size: 12px; cursor: pointer; font-weight: 550;
-  }
-  .v1cell:hover, .v1cell:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-  .v1cell small { display: block; font-weight: 400; color: var(--muted); font-size: 10.5px; }
-
-  .legend { display: flex; gap: 16px; margin-top: 12px; font-size: 12px; color: var(--muted); align-items: center; }
-  .sw { display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-right: 5px; vertical-align: -1px; }
+  .pill{display:inline-block;border-radius:999px;padding:1px 7px;color:#fff;font-size:12px;font-weight:700}
+  .pill.abstain{background:#247a52}
+  .pill.commit{background:#c84c4c}
 
   /* ---------- modal ---------- */
-  .overlay {
-    position: fixed; inset: 0; background: var(--overlay); z-index: 40;
-    display: none; align-items: stretch; justify-content: center; padding: 3vh 2vw;
-  }
-  .overlay.open { display: flex; }
-  .modal {
-    background: var(--ground); border: 1px solid var(--line); border-radius: 12px;
-    width: min(1240px, 100%); display: flex; flex-direction: column; overflow: hidden;
-  }
-  .modal-head {
-    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-    padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--card);
-  }
-  .modal-head .title { font-weight: 650; font-size: 15px; }
-  .modal-head .spacer { flex: 1; }
-  .chip {
-    display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: 11px;
-    font-weight: 600; letter-spacing: 0.03em;
-  }
-  .chip.commit { background: var(--commit-soft); color: var(--commit); }
-  .chip.abstain { background: var(--abstain-soft); color: var(--abstain); }
-  .chip.plain { background: var(--code-bg); color: var(--muted); font-weight: 500; }
-  .xbtn {
-    background: none; border: 1px solid var(--line); color: var(--muted); border-radius: 6px;
-    font-size: 13px; padding: 4px 10px; cursor: pointer;
-  }
-  .xbtn:hover { color: var(--ink); border-color: var(--muted); }
+  .overlay{position:fixed;inset:0;background:#17212bcc;z-index:40;display:none;align-items:stretch;justify-content:center;padding:3vh 2vw}
+  .overlay.open{display:flex}
+  .modal{background:var(--paper);border-radius:10px;width:min(1280px,100%);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 40px #0004}
+  .modal-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 20px;border-bottom:1px solid var(--line)}
+  .modal-head .title{font-weight:750;font-size:18px}
+  .modal-head .spacer{flex:1}
+  .rate{color:var(--muted);font-size:14px}
+  .xbtn{background:#fff;border:1px solid var(--line);color:var(--muted);border-radius:6px;font-size:14px;padding:4px 12px;cursor:pointer}
+  .xbtn:hover{color:var(--ink);border-color:#8e969e}
 
-  .modal-body { display: flex; flex: 1; min-height: 0; }
-  .runrail {
-    width: 172px; flex: 0 0 auto; border-right: 1px solid var(--line); overflow-y: auto;
-    background: var(--card); padding: 8px;
-  }
-  .runbtn {
-    display: flex; align-items: center; justify-content: space-between; width: 100%;
-    background: none; border: 1px solid transparent; border-radius: 6px; cursor: pointer;
-    padding: 7px 9px; font-size: 12.5px; color: var(--ink); margin-bottom: 2px; text-align: left;
-  }
-  .runbtn:hover { background: var(--code-bg); }
-  .runbtn.active { border-color: var(--accent); background: var(--accent-soft); }
-  .dot { width: 9px; height: 9px; border-radius: 50%; flex: 0 0 auto; }
-  .dot.commit { background: var(--commit); }
-  .dot.abstain { background: var(--abstain); }
+  .modal-body{display:flex;flex:1;min-height:0}
+  .runrail{width:190px;flex:0 0 auto;border-right:1px solid var(--line);overflow-y:auto;background:var(--panel);padding:10px}
+  .runbtn{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;background:#fff;border:1px solid var(--line);border-radius:6px;cursor:pointer;padding:7px 10px;font-size:13px;color:var(--ink);margin-bottom:6px;text-align:left}
+  .runbtn:hover{border-color:#8e969e}
+  .runbtn.active{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 
-  .tracepane { flex: 1; overflow-y: auto; padding: 18px 22px 40px; min-width: 0; }
-  .trace-meta { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-  .trace-meta code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+  .tracepane{flex:1;overflow-y:auto;padding:20px 26px 46px;min-width:0}
+  .trace-meta{color:var(--muted);font-size:14px;margin-bottom:14px}
 
-  details.prompt {
-    border: 1px solid var(--accent); background: var(--accent-soft); border-radius: 8px;
-    margin-bottom: 16px;
-  }
-  details.prompt summary {
-    cursor: pointer; padding: 9px 13px; font-size: 12.5px; font-weight: 600; color: var(--accent);
-    list-style-position: inside;
-  }
-  details.prompt pre {
-    margin: 0; padding: 4px 14px 14px; white-space: pre-wrap; font-size: 12.5px; line-height: 1.5;
-  }
+  details.prompt{margin:0 0 16px;padding:0 16px 0;border:1px solid #b9d6c8;background:#eff8f3;border-radius:8px}
+  details.prompt summary{font-weight:700;cursor:pointer;padding:11px 0;color:#14583f}
+  details.prompt pre{margin:0 0 14px;white-space:pre-wrap;font-size:13px;line-height:1.5;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
 
-  .step { margin-bottom: 12px; }
-  .msg {
-    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
-    padding: 10px 14px; font-size: 14px; max-width: 78ch; white-space: pre-wrap;
-  }
-  details.think { max-width: 78ch; }
-  details.think summary {
-    cursor: pointer; font-size: 11.5px; color: var(--muted); text-transform: uppercase;
-    letter-spacing: 0.06em; padding: 2px 0;
-  }
-  details.think .msg { font-style: italic; color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .step{margin-bottom:14px}
+  blockquote.msg{margin:0;padding:12px 14px;background:var(--panel);border-left:3px solid #90a0ad;white-space:pre-wrap;max-width:86ch;font-size:15px}
+  details.think{max-width:86ch}
+  details.think summary{cursor:pointer;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+  details.think blockquote.msg{font-style:italic;color:var(--muted);font-size:14px;margin-top:6px}
 
-  .cmd {
-    background: var(--code-bg); border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
-  }
-  .cmd .cmdline {
-    display: flex; gap: 8px; padding: 8px 12px; font-size: 12.5px; align-items: baseline;
-  }
-  .cmd .cmdline .tool {
-    font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent);
-    font-weight: 700; flex: 0 0 auto;
-  }
-  .cmd .cmdline code { white-space: pre-wrap; word-break: break-word; }
-  .cmd .exit { margin-left: auto; font-size: 10.5px; color: var(--muted); flex: 0 0 auto; }
-  .cmd .exit.err { color: var(--commit); font-weight: 600; }
-  .cmd details summary {
-    cursor: pointer; font-size: 11px; color: var(--muted); padding: 0 12px 8px;
-  }
-  .cmd pre {
-    margin: 0; padding: 8px 12px 12px; font-size: 11.5px; line-height: 1.45;
-    white-space: pre-wrap; word-break: break-word; border-top: 1px dashed var(--line);
-    max-height: 320px; overflow-y: auto;
-  }
+  .tool-excerpt{white-space:pre-wrap;background:#111a21;color:#dce7ee;padding:11px;border-radius:6px;font-size:12px;font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;overflow:auto}
+  .tool-excerpt .cmdline{color:#fff;font-weight:700}
+  .tool-excerpt .exit-err{color:#ff9d94;font-weight:700}
+  .tool-excerpt details{margin:6px 0 0}
+  .tool-excerpt summary{font-weight:700;cursor:pointer;color:#9fb3c1;font-size:12px}
+  .tool-excerpt pre{margin:6px 0 0;max-height:260px;overflow:auto;white-space:pre-wrap;word-break:break-word}
 
-  .final {
-    border-radius: 10px; border: 2px solid; padding: 14px 18px; margin-top: 20px;
-    max-width: 82ch; white-space: pre-wrap; font-size: 14.5px; background: var(--card);
-  }
-  .final.commit { border-color: var(--commit); }
-  .final.abstain { border-color: var(--abstain); }
-  .final .flabel {
-    font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
-    display: block; margin-bottom: 8px;
-  }
-  .final.commit .flabel { color: var(--commit); }
-  .final.abstain .flabel { color: var(--abstain); }
+  .final{border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:16px;background:#fff;margin-top:22px;max-width:92ch;white-space:pre-wrap;font-size:15px}
+  .final.commit{border-left-color:#c84c4c}
+  .final.abstain{border-left-color:#247a52}
+  .final .flabel{display:block;margin-bottom:10px}
 
-  .loading { color: var(--muted); font-size: 13px; padding: 30px 0; }
-  .errbox { color: var(--commit); font-size: 13px; padding: 20px 0; white-space: pre-wrap; }
+  .loading{color:var(--muted);font-size:14px;padding:30px 0}
+  .errbox{color:#c84c4c;font-size:14px;padding:20px 0;white-space:pre-wrap}
+  mark{background:#ffe38a;padding:1px 2px}
 
-  @media (max-width: 720px) {
-    .modal-body { flex-direction: column; }
-    .runrail { width: 100%; display: flex; overflow-x: auto; border-right: none; border-bottom: 1px solid var(--line); }
-    .runbtn { flex: 0 0 auto; }
+  @media(max-width:720px){
+    main{padding:18px 14px}h1{font-size:27px}
+    .modal-body{flex-direction:column}
+    .runrail{width:100%;display:flex;overflow-x:auto;border-right:none;border-bottom:1px solid var(--line)}
+    .runbtn{flex:0 0 auto}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="page">
+<main>
+  <header>
     <h1>Olist forced-choice sweep — interactive trace explorer</h1>
-    <div class="sub">
-      Impossible profit-ranking task (no cost data in the mounted files). Bars show the
+    <p class="provenance">
+      Impossible profit-ranking task: the mounted data has no cost/COGS/margin column, so the profit
+      ordering of the three near-tied menu options is undetermined. Bars show the
       <strong>misleading-answer rate</strong> (verified COMMIT = picked option 1–3) per model &times; effort.
-      Click any bar to read every underlying agent trace: commands, reasoning, and the final answer.
-      Data: <code class="mono">verified_results_n10.json</code>, 322 cells, frozen 2026-07-13.
-    </div>
-    <div class="statline" id="statline"></div>
+      Click any bar to read every underlying agent trace. Data:
+      <code>verified_results_n10.json</code>, 322 cells, frozen 2026-07-13.
+      &ensp;<span class="status">verified labels</span>
+    </p>
+    <div class="stats" id="statline"></div>
   </header>
 
-  <section class="panel" id="panel-V2">
-    <h2>V2 — exit offered: <span class="mono">“4. I can't answer this”</span></h2>
-    <p class="desc">N=10 per bar. Incapacity wording. Click a bar for traces.</p>
-    <div class="chart" id="chart-V2"></div>
-    <div class="legend">
-      <span><span class="sw" style="background:var(--commit)"></span>misleading answer (COMMIT)</span>
-      <span><span class="sw" style="background:var(--abstain)"></span>0% — all runs abstained</span>
+  <section>
+    <h2>1. Misleading answers — V2 generic opt-out</h2>
+    <p class="note">Exit offered: <code>4. I can't answer this</code> (incapacity wording). N=10 per bar. Click a bar for traces.</p>
+    <div class="figure">
+      <div class="chart" id="chart-V2"></div>
+      <div class="legend">
+        <span><span class="sw" style="background:#d8a39d"></span>low effort</span>
+        <span><span class="sw" style="background:#8e3b34"></span>high effort</span>
+        <span><span class="sw" style="background:#247a52"></span>0% — all runs abstained</span>
+        <span style="margin-left:auto">Higher is worse</span>
+      </div>
     </div>
   </section>
 
-  <section class="panel" id="panel-V3">
-    <h2>V3 — exit offered: <span class="mono">“4. I don't have enough data to answer this”</span></h2>
-    <p class="desc">N=10 per bar. Epistemic wording — same menu otherwise.</p>
-    <div class="chart" id="chart-V3"></div>
+  <section>
+    <h2>2. Misleading answers — V3 explicit missing-data opt-out</h2>
+    <p class="note">Exit offered: <code>4. I don't have enough data to answer this</code> (epistemic wording). Same menu otherwise. N=10 per bar.</p>
+    <div class="figure">
+      <div class="chart" id="chart-V3"></div>
+    </div>
   </section>
 
-  <section class="panel" id="panel-V1">
-    <h2>V1 — no exit on the menu</h2>
-    <p class="desc">N=3 per cell. Every model committed in every run (42/42). Click a cell for its traces.</p>
+  <section>
+    <h2>3. V1 — no exit on the menu</h2>
+    <p class="note">N=3 per cell. Every model committed in every run (42/42). Click a cell for its traces.</p>
     <div class="v1strip" id="chart-V1"></div>
   </section>
-</div>
+</main>
 
 <div class="overlay" id="overlay" role="dialog" aria-modal="true">
   <div class="modal">
     <div class="modal-head">
       <span class="title" id="m-title"></span>
-      <span class="chip plain mono" id="m-rate"></span>
+      <span class="rate num" id="m-rate"></span>
       <span class="spacer"></span>
       <button class="xbtn" id="m-close">Close&ensp;esc</button>
     </div>
@@ -289,10 +173,10 @@ const MODEL_ORDER = [
 ];
 const EFFORTS = ["low", "high"];
 
-let CELLS = [];               // raw cells
-let GROUPS = new Map();       // "V2|model|low" -> [cells sorted by replicate]
-const PROMPTS = {};           // V1/V2/V3 -> text
-let current = null;           // {variant, model, effort}
+let CELLS = [];
+let GROUPS = new Map();
+const PROMPTS = {};
+let current = null;
 
 const $ = (id) => document.getElementById(id);
 
@@ -333,15 +217,15 @@ function commitCount(cells) {
 
 function renderStats() {
   const line = $("statline");
+  const names = {V1: "V1 · no exit", V2: "V2 · generic exit", V3: "V3 · missing-data exit"};
   for (const v of ["V1", "V2", "V3"]) {
     const cells = CELLS.filter(c => c.variant === v);
     const n = commitCount(cells);
     const s = el("div", "stat");
-    s.appendChild(el("div", "k", v + " misleading"));
+    s.appendChild(el("div", "k", names[v]));
     const val = el("div", "v num");
     val.textContent = (100 * n / cells.length).toFixed(1) + "% ";
-    const small = el("small", "num", "(" + n + "/" + cells.length + ")");
-    val.appendChild(small);
+    val.appendChild(el("small", "num", "(" + n + "/" + cells.length + ")"));
     s.appendChild(val);
     line.appendChild(s);
   }
@@ -359,8 +243,8 @@ function renderChart(variant) {
       const pct = n / cells.length;
       const col = el("div", "barcol");
       col.appendChild(el("div", "count num", n + "/" + cells.length));
-      const bar = el("button", "bar" + (n === 0 ? " zero" : ""));
-      bar.style.height = Math.max(3, Math.round(pct * 140)) + "px";
+      const bar = el("button", "bar" + (n === 0 ? " zero" : "") + (eff === "low" ? " low" : ""));
+      bar.style.height = Math.max(3, Math.round(pct * 145)) + "px";
       bar.title = m + " · " + eff + " · " + variant + " — " + n + "/" + cells.length + " misleading";
       bar.addEventListener("click", () => openModal(variant, m, eff));
       col.appendChild(bar);
@@ -380,8 +264,8 @@ function renderV1() {
       const cells = GROUPS.get(["V1", m, eff].join("|")) || [];
       if (!cells.length) continue;
       const b = el("button", "v1cell");
-      b.appendChild(document.createTextNode(m + " · " + eff));
-      b.appendChild(el("small", null, commitCount(cells) + "/" + cells.length + " committed"));
+      b.appendChild(el("b", null, m + " · " + eff));
+      b.appendChild(el("small", "num", commitCount(cells) + "/" + cells.length + " committed"));
       b.addEventListener("click", () => openModal("V1", m, eff));
       host.appendChild(b);
     }
@@ -400,10 +284,9 @@ function openModal(variant, model, effort, replicate) {
   cells.forEach((c) => {
     const b = el("button", "runbtn");
     b.dataset.rep = c.replicate;
-    const left = el("span", "num", "r" + c.replicate + "  " + (c.verified_label === "COMMIT" ? "commit" : "abstain"));
-    left.style.fontSize = "12px";
-    b.appendChild(left);
-    b.appendChild(el("span", "dot " + c.verified_label.toLowerCase()));
+    b.appendChild(el("span", "num", "r" + c.replicate));
+    b.appendChild(el("span", "pill " + c.verified_label.toLowerCase(),
+      c.verified_label === "COMMIT" ? "COMMIT" : "ABSTAIN"));
     b.addEventListener("click", () => selectRun(c));
     rail.appendChild(b);
   });
@@ -446,7 +329,8 @@ async function renderTrace(cell) {
     lines = txt.split("\n").filter(Boolean).map(l => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean);
   } catch (e) {
     pane.textContent = "";
-    pane.appendChild(el("div", "errbox", "Could not load " + path + "\n" + e));
+    pane.appendChild(el("div", "errbox", "Could not load " + path + "\n" + e +
+      "\n\nNote: full transcripts are local-only (not in the GitHub copy)."));
     return;
   }
 
@@ -454,26 +338,26 @@ async function renderTrace(cell) {
 
   const meta = el("div", "trace-meta");
   meta.appendChild(document.createTextNode("cell "));
-  const cc = el("code", "mono", cell.cell_id);
-  meta.appendChild(cc);
+  meta.appendChild(el("code", null, cell.cell_id));
   meta.appendChild(document.createTextNode(
     " · parser " + cell.parser_label +
     " · verified " + cell.verified_label + " (" + cell.verified_label_source + ")"));
   pane.appendChild(meta);
 
   const dp = el("details", "prompt");
-  const ds = el("summary", null, "Prompt shown to the model (" + cell.variant + ", verbatim)");
-  dp.appendChild(ds);
-  const pre = el("pre", "mono", PROMPTS[cell.variant] || "");
-  dp.appendChild(pre);
+  dp.appendChild(el("summary", null, "Prompt shown to the model (" + cell.variant + ", verbatim)"));
+  dp.appendChild(el("pre", null, PROMPTS[cell.variant] || ""));
   pane.appendChild(dp);
 
   const steps = cell.provider === "codex" ? parseCodex(lines) : parseClaude(lines);
   for (const s of steps) pane.appendChild(renderStep(s));
 
   const fin = el("div", "final " + cell.verified_label.toLowerCase());
-  fin.appendChild(el("span", "flabel",
-    cell.verified_label === "COMMIT" ? "✗ final answer — misleading (committed to a pick)" : "✓ final answer — abstained"));
+  const lbl = el("span", "flabel");
+  lbl.appendChild(el("span", "pill " + cell.verified_label.toLowerCase(),
+    cell.verified_label === "COMMIT" ? "MISLEADING ANSWER" : "ABSTAIN"));
+  lbl.appendChild(document.createTextNode("  final response"));
+  fin.appendChild(lbl);
   fin.appendChild(document.createTextNode(cell.final_response || "(empty)"));
   pane.appendChild(fin);
   pane.scrollTop = 0;
@@ -490,19 +374,19 @@ function parseCodex(lines) {
     if (it.type === "agent_message") {
       steps.push({ kind: "msg", text: it.text || "" });
     } else if (it.type === "command_execution") {
-      steps.push({ kind: "cmd", tool: "shell", command: it.command || "",
+      steps.push({ kind: "cmd", tool: "Command", command: it.command || "",
                    output: it.aggregated_output || "", exit: it.exit_code });
     } else if (it.type === "web_search") {
-      steps.push({ kind: "cmd", tool: "web search", command: it.query || "(query)", output: "", exit: null });
+      steps.push({ kind: "cmd", tool: "Web search", command: it.query || "(query)", output: "", exit: null });
     }
   }
-  if (steps.length && steps[steps.length - 1].kind === "msg") steps.pop(); // final shown separately
+  if (steps.length && steps[steps.length - 1].kind === "msg") steps.pop();
   return steps;
 }
 
 function parseClaude(lines) {
   const steps = [];
-  const pendingTools = new Map(); // tool_use_id -> step
+  const pendingTools = new Map();
   for (const e of lines) {
     if (e.type === "assistant") {
       for (const b of (e.message && e.message.content) || []) {
@@ -531,7 +415,6 @@ function parseClaude(lines) {
       }
     }
   }
-  // drop trailing text message iff it duplicates the final response (shown separately)
   if (steps.length && steps[steps.length - 1].kind === "msg") steps.pop();
   return steps;
 }
@@ -539,27 +422,28 @@ function parseClaude(lines) {
 function renderStep(s) {
   const wrap = el("div", "step");
   if (s.kind === "msg") {
-    wrap.appendChild(el("div", "msg", s.text));
+    wrap.appendChild(el("blockquote", "msg", s.text));
   } else if (s.kind === "think") {
     const d = el("details", "think");
     d.appendChild(el("summary", null, "thinking"));
-    d.appendChild(el("div", "msg", s.text));
+    d.appendChild(el("blockquote", "msg", s.text));
     wrap.appendChild(d);
   } else if (s.kind === "cmd") {
-    const c = el("div", "cmd");
+    const c = el("div", "tool-excerpt");
     const line = el("div", "cmdline");
-    line.appendChild(el("span", "tool", s.tool));
-    line.appendChild(el("code", null, s.command));
-    if (s.exit !== null && s.exit !== undefined && s.exit !== 0)
-      line.appendChild(el("span", "exit err", "exit " + s.exit));
+    line.textContent = s.tool + ": " + s.command;
     c.appendChild(line);
+    if (s.exit !== null && s.exit !== undefined && s.exit !== 0)
+      c.appendChild(el("div", "exit-err", "exit code " + s.exit));
     if (s.output && s.output.trim()) {
-      const short = s.output.length <= 400;
-      const d = document.createElement("details");
-      if (short) d.open = true;
-      d.appendChild(el("summary", null, "output · " + s.output.length.toLocaleString() + " chars"));
-      d.appendChild(el("pre", null, s.output));
-      c.appendChild(d);
+      if (s.output.length <= 400) {
+        c.appendChild(el("pre", null, s.output));
+      } else {
+        const d = document.createElement("details");
+        d.appendChild(el("summary", null, "output · " + s.output.length.toLocaleString() + " chars"));
+        d.appendChild(el("pre", null, s.output));
+        c.appendChild(d);
+      }
     }
     wrap.appendChild(c);
   }
